@@ -1,31 +1,45 @@
 import { response } from "express";
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 const MemeGenerator: React.FC = () => {
 const [upText, setUpText] = useState <string | null> (null);
 const [bottomText, setButtonText] = useState < string | null> (null);
-const [photo, setImage] = useState < Object| null> (null);
+const [images, setImages] = useState < []| null> (null);
 
-useEffect(()=> {
-    handleImageFetch();
+useEffect (() => {
+    handleSetImages()
   }, []);
 
-const handleImageFetch =  () => {
-    fetch('https://api.imgflip.com/get_memes')
-    .then ((res) => res.json())
-    .then ((res) => {
-        const { memes } = res.data
-        console.log(memes)
-        console.log(memes[0])
-        setImage(memes)
+  interface Image {
+    box_count: number,
+    height: number,
+    id: string,
+    name: string,
+    url: string,
+    width: number,
+}; 
+
+  const handleSetImages = async (): Promise<any> => {
+    const response = await axios('/photos');
+    const responseObject = response.data.memes
+    const arrImgUrl = responseObject.map((object: Image, index: number) => {
+        return <div className="memeGallery__imageCell">
+              <img
+                src={object.url}
+                className="memeGallery__image"
+                key={index}
+                id= {object.id}
+              />
+            </div>
     })
-}
-
-
-
+    setImages(arrImgUrl);
+};
 
     return (
-        <h1>Meme Generator</h1>
+        <div className="memeGallery">
+           {images}
+        </div>
     )
 }
 

@@ -1,8 +1,12 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #ffffff
+}
 
 header {
   padding: 2rem;
   display: flex;
-  justify-content: center;
   background-color: #ec6423;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-family: sans-serif;
@@ -20,8 +24,8 @@ header {
   padding: 0;
 }
 
-.nav__menubutton{
-  margin-left: 30%;
+.nav__menubutton:last-of-type{
   border:none;
-  background-color: ;
+  background-color: transparent;
+  margin-left: auto;
 }
