@@ -29,3 +29,8 @@ header {
   background-color: transparent;
   margin-left: auto;
 }
+
+.memeGallery {
+  display: grid;
+  
+}
