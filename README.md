@@ -16,7 +16,7 @@ Kristine – [@kristinetuazon](https://www.instagram.com/kristinetuazon) – kri
 
 ## Contributing
 
-1. Fork it (<https://github.com/kristinetuazon/cc28-meme-genfork>)
+1. Fork it (<https://github.com/kristinetuazon/cc28-meme-gen/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
